@@ -22,6 +22,10 @@ app.post('/calculator', (req, res) => {
   res.send(`결과는 = ${result}`);
 });
 
+const userRouter = require('./router/users');
+
+app.use('/users', userRouter);
+
 app.get('*', (req, res) => {
   res.status(404).send('404! not found page');
 });
